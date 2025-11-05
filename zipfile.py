@@ -24,6 +24,12 @@ def FuzzerRunOne(FuzzerInput):
                 info.file_size
     except zipfile.BadZipFile:
         return
+    # zipfile raises 'NotImplementedError' for ZIP versions
+    # that it doesn't understand.
+    except NotImplementedError as e:
+        if "zip file version" in str(e):
+            return
+        raise
     except UnicodeDecodeError:
         return
 
