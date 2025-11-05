@@ -24,4 +24,6 @@ def FuzzerRunOne(FuzzerInput):
                 info.file_size
     except zipfile.BadZipFile:
         return
+    except UnicodeDecodeError:
+        return
 
