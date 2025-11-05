@@ -1,4 +1,4 @@
-all : fuzzer-html fuzzer-email fuzzer-httpclient fuzzer-json fuzzer-difflib fuzzer-csv fuzzer-decode fuzzer-ast fuzzer-tarfile fuzzer-zipfile fuzzer-re fuzzer-configparser fuzzer-tomllib fuzzer-plistlib
+all : fuzzer-tarfile fuzzer-zipfile
 
 PYTHON_CONFIG_PATH=$(CPYTHON_INSTALL_PATH)/bin/python3-config
 CXXFLAGS += $(shell $(PYTHON_CONFIG_PATH) --cflags)
